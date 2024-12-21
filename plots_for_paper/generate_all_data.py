@@ -1,0 +1,13 @@
+from introduction.generate_data import generate_data_for_introduction_plots
+from sweeping_line.generate_data import generate_data_for_sweeping_line_plots
+from bivariate_distributions.generate_data import generate_data_for_bivariate_distributions_plots
+from tests_of_indep_comparison.generate_data import generate_data_for_indep_tests_plots
+from coefficient_as_n_grows.generate_data import generate_data_for_coefficient_plots
+from runtime.generate_data import generate_data_for_runtime
+
+generate_data_for_introduction_plots([0,0,0])
+generate_data_for_sweeping_line_plots(0)
+generate_data_for_bivariate_distributions_plots(0)
+generate_data_for_indep_tests_plots()
+generate_data_for_coefficient_plots(0)
+generate_data_for_runtime(0)

@@ -1,0 +1,15 @@
+from sweeping_line.generate_plots import generate_sweeping_line_plots
+from introduction.generate_plots import generate_introduction_plots
+from bivariate_distributions.generate_plots import generate_bivariate_distributions_plots
+from tests_of_indep_comparison.generate_plots import generate_indep_tests_plots
+from coefficient_as_n_grows.generate_plots import generate_coefficients_plots
+from runtime.generate_plots import generate_runtime_plots
+from proof_of_alpha_n.generate_plots import generate_alpha_n_proof_plots
+
+generate_sweeping_line_plots()
+generate_introduction_plots()
+generate_bivariate_distributions_plots()
+generate_indep_tests_plots()
+generate_coefficients_plots()
+generate_runtime_plots()
+generate_alpha_n_proof_plots()
