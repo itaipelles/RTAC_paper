@@ -5,7 +5,7 @@ import sys
 sys.path.append('./')
 from matplotlib_helpers import _RCPARAMS_LATEX_SINGLE_COLUMN, save_figure
 from common import rank_transform_unbiased
-from AreaIndependenceTest import AreaCoverageIndependenceTest
+from AreaCoverageIndependenceTest import AreaCoverageIndependenceTest
 
 def plot_squares(x,y,n,do_RT=False,name=None):
     if do_RT:

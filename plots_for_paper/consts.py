@@ -1,12 +1,12 @@
 from hyppo.tools import linear, exponential, cubic,joint_normal,step,quadratic,w_shaped,spiral,uncorrelated_bernoulli,logarithmic,fourth_root,sin_four_pi,sin_sixteen_pi,square,two_parabolas,circle,ellipse,diamond,multiplicative_noise,multimodal_independence
-import AreaIndependenceTest
+import AreaCoverageIndependenceTest
 import MoreIndependenceTests
 from hyppo.independence import Hsic, Dcorr
 import numpy as np
 from scipy.stats import multivariate_normal
 
 INDEP_TESTS = {
-    'area': AreaIndependenceTest.AreaCoverageIndependenceTest,
+    'area': AreaCoverageIndependenceTest.AreaCoverageIndependenceTest,
     'xicor': MoreIndependenceTests.XiCorPYIndependenceTest,
     "dcor": Dcorr,
     "hsic": Hsic,

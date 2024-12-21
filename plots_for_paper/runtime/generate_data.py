@@ -4,7 +4,7 @@ import pickle
 import time
 import sys
 sys.path.append('./')
-from AreaIndependenceTest import AreaCoverageIndependenceTest
+from AreaCoverageIndependenceTest import AreaCoverageIndependenceTest
 from MoreIndependenceTests import HHGRIndependenceTest
 from plots_for_paper.consts import multimodal_independence, INDEP_TESTS
 
