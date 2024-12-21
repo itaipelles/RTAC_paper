@@ -6,4 +6,5 @@ future
 xicorpy
 etacorpy
 rpy2
+tqdm
 # minepy

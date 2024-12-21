@@ -1,3 +1,4 @@
+import numpy as np
 from hyppo.independence.base import IndependenceTest
 from etacorpy.calc_eta_n import calc_eta_n
 
@@ -9,6 +10,8 @@ class AreaCoverageIndependenceTest(IndependenceTest):
         super(AreaCoverageIndependenceTest, self).__init__(**kwargs)
         
     def statistic(self, x, y):
+        x = np.reshape(x, (len(x),))
+        y = np.reshape(y, (len(y),))
         return calc_eta_n(x,y,self.coverage_factor)
     
     def test(self, x, y,reps=1000,workers=-1):

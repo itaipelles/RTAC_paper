@@ -30,14 +30,14 @@ def generate_data_for_runtime():
     }
 
     times = {
-        key: [] for key in INDEP_TESTS.keys()
+        key: [] for key in test_instances.keys()
     }
     
     prepare_for_runtime_plots(ns)
 
     for n in tqdm(ns):
         cur_n_times = {
-            key: [] for key in INDEP_TESTS.keys()
+            key: [] for key in test_instances.keys()
         }
         num_of_reps = 100000//n
         for _ in range(num_of_reps):
@@ -46,7 +46,7 @@ def generate_data_for_runtime():
                 bef = time.time()
                 test_instance.statistic(x,y)
                 cur_n_times[key].append(time.time()-bef)
-        for key in INDEP_TESTS.keys():
+        for key in test_instances.keys():
             times[key].append(np.mean(cur_n_times[key]))
     with open(f'plots_for_paper/runtime/data/runtimes.pkl', 'wb') as f:
         pickle.dump(times, f)

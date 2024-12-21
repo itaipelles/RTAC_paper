@@ -3,7 +3,7 @@ import numpy as np
 
 table_prefix_string = '''\\begin{tabular}{c c c c c c c}
 \\hline
-n & $\\xi_n$ & $\\eta_n$ & HHG & MIC & dCor & HSIC \\\\ [0.5ex] 
+n & $\\xi_n$ & HHG & MIC & dCor & HSIC  & $\\eta_n$ (ours) \\\\ [0.5ex] 
 \\hline
 '''
 
@@ -15,7 +15,7 @@ def generate_runtime_plots():
     ns = np.load('plots_for_paper/runtime/data/ns.npy')
     with open(f'plots_for_paper/runtime/data/runtimes.pkl', 'rb') as f:
         times = pickle.load(f)
-    order_of_keys = ['xicor', 'area', 'hhg', 'mic', 'dcor', 'hsic']
+    order_of_keys = ['xicor', 'hhg', 'mic', 'dcor', 'hsic', 'area']
     lines = []
     for i, n in enumerate(ns):
         cur_items = [str(n)]
