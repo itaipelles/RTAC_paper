@@ -3,8 +3,8 @@ from matplotlib.patches import Rectangle
 import numpy as np
 import sys
 sys.path.append('./')
-from common import rank_transform_unbiased
-from matplotlib_helpers import _RCPARAMS_LATEX_SINGLE_COLUMN, save_figure
+from utils.common import rank_transform_unbiased
+from utils.matplotlib_helpers import _RCPARAMS_LATEX_SINGLE_COLUMN, save_figure
 
 
 def generate_alpha_n_proof_plots():

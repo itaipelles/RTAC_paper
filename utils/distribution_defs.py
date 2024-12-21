@@ -1,27 +1,7 @@
-from hyppo.tools import linear, exponential, cubic,joint_normal,step,quadratic,w_shaped,spiral,uncorrelated_bernoulli,logarithmic,fourth_root,sin_four_pi,sin_sixteen_pi,square,two_parabolas,circle,ellipse,diamond,multiplicative_noise,multimodal_independence
-import AreaCoverageIndependenceTest
-import MoreIndependenceTests
-from hyppo.independence import Hsic, Dcorr
 import numpy as np
 from scipy.stats import multivariate_normal
+from .hyppo_distributions import linear, exponential, cubic,joint_normal,step,quadratic,w_shaped,spiral,uncorrelated_bernoulli,logarithmic,fourth_root,sin_four_pi,sin_sixteen_pi,square,two_parabolas,circle,ellipse,diamond,multiplicative_noise,multimodal_independence
 
-INDEP_TESTS = {
-    'area': AreaCoverageIndependenceTest.AreaCoverageIndependenceTest,
-    'xicor': MoreIndependenceTests.XiCorPYIndependenceTest,
-    "dcor": Dcorr,
-    "hsic": Hsic,
-    'mic': MoreIndependenceTests.MICIndependenceTest,
-    'hhg': MoreIndependenceTests.HHGRIndependenceTest
-}
-
-TEST_LABELS = {
-    'area': '$\\eta_n$',
-    'xicor': "$\\xi_n$",
-    'dcor': "dCor",
-    'hsic': "HSIC",
-    'mic': "MIC",
-    'hhg': "HHG"
-}
 
 def four_circles(n,p,noise=0):
     theta = np.random.rand(n)*2*np.pi

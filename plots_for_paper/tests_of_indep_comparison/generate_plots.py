@@ -3,9 +3,9 @@ import numpy as np
 import sys
 sys.path.append('./')
 from .generate_data import SAMP_SIZES
-from plots_for_paper.consts import SIMULATIONS
-from matplotlib_helpers import _RCPARAMS_LATEX_SINGLE_COLUMN, save_figure
-from plots_for_paper.consts import SIM_TITLES, TEST_LABELS
+from utils.matplotlib_helpers import _RCPARAMS_LATEX_SINGLE_COLUMN, save_figure
+from utils.distribution_defs import SIMULATIONS, SIM_TITLES
+from utils.methods_defs import TEST_LABELS
 
 def generate_indep_tests_plots():
     with plt.rc_context(rc = _RCPARAMS_LATEX_SINGLE_COLUMN):

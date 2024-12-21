@@ -3,7 +3,8 @@ import numpy as np
 from joblib import Parallel, delayed
 import sys
 sys.path.append('./')
-from plots_for_paper.consts import INDEP_TESTS, SIMULATIONS
+from utils.distribution_defs import SIMULATIONS
+from utils.methods_defs import INDEP_TESTS
 
 # constants
 MAX_SAMPLE_SIZE = 100

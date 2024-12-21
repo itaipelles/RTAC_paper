@@ -3,8 +3,8 @@ import matplotlib.pyplot as plt
 from matplotlib.patches import Rectangle
 import sys
 sys.path.append('./')
-from matplotlib_helpers import _RCPARAMS_LATEX_SINGLE_COLUMN, save_figure
-from common import rank_transform_unbiased
+from utils.matplotlib_helpers import _RCPARAMS_LATEX_SINGLE_COLUMN, save_figure
+from utils.common import rank_transform_unbiased
 
 
 def plot_rects(rects, n, idx_of_chosen_rect):

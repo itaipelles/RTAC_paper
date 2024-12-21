@@ -3,9 +3,9 @@ import matplotlib.pyplot as plt
 from matplotlib.patches import Rectangle
 import sys
 sys.path.append('./')
-from matplotlib_helpers import _RCPARAMS_LATEX_SINGLE_COLUMN, save_figure
-from common import rank_transform_unbiased
-from AreaCoverageIndependenceTest import AreaCoverageIndependenceTest
+from utils.matplotlib_helpers import _RCPARAMS_LATEX_SINGLE_COLUMN, save_figure
+from utils.common import rank_transform_unbiased
+from utils.AreaCoverageIndependenceTest import AreaCoverageIndependenceTest
 
 def plot_squares(x,y,n,do_RT=False,name=None):
     if do_RT:

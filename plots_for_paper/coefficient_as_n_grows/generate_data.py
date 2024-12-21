@@ -5,7 +5,8 @@ from tqdm import tqdm
 from joblib import Parallel, delayed
 import sys
 sys.path.append('./')
-from plots_for_paper.consts import SIMULATIONS, INDEP_TESTS
+from utils.distribution_defs import SIMULATIONS
+from utils.methods_defs import INDEP_TESTS
 
 def generate_data_single_dist(dist, dist_name, ns):
     test_instances = {

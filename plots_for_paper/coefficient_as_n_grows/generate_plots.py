@@ -3,8 +3,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 import sys
 sys.path.append('./')
-from matplotlib_helpers import _RCPARAMS_LATEX_SINGLE_COLUMN, save_figure
-from plots_for_paper.consts import SIM_TITLES, TEST_LABELS
+from utils.matplotlib_helpers import _RCPARAMS_LATEX_SINGLE_COLUMN, save_figure
+from utils.distribution_defs import SIM_TITLES, TEST_LABELS
 
 def generate_single_plot(dist_name, dist_title, ns):
     with open(f'plots_for_paper/coefficient_as_n_grows/data/{dist_name}.pkl', 'rb') as f:

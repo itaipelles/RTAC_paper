@@ -1,7 +1,7 @@
 import numpy as np
 import sys
 sys.path.append('./')
-from plots_for_paper.consts import SIMULATIONS
+from utils.distribution_defs import SIMULATIONS
 
 NOISY = 100  # sample size of noisy simulation
 NO_NOISE = 1000  # sample size of noise-free simulation

@@ -4,9 +4,10 @@ import pickle
 import time
 import sys
 sys.path.append('./')
-from AreaCoverageIndependenceTest import AreaCoverageIndependenceTest
-from MoreIndependenceTests import HHGRIndependenceTest
-from plots_for_paper.consts import multimodal_independence, INDEP_TESTS
+from utils.AreaCoverageIndependenceTest import AreaCoverageIndependenceTest
+from utils.MoreIndependenceTests import HHGRIndependenceTest
+from utils.distribution_defs import multimodal_independence
+from utils.methods_defs import INDEP_TESTS
 
 def prepare_for_runtime_plots(ns):
     # call area function once for numba compilation:
