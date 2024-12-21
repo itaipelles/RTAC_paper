@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import sys
 sys.path.append('./')
-from amit_matplotlib import save_figure
+from matplotlib_helpers import save_figure
 from plots_for_paper.consts import SIM_TITLES
 
 def generate_bivariate_distributions_plots():

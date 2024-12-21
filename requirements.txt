@@ -1,4 +1,9 @@
+numpy
+matplotlib
+seaborn
 hyppo
+future
 xicorpy
+etacorpy
 rpy2
 # minepy

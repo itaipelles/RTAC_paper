@@ -3,7 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import sys
 sys.path.append('./')
-from amit_matplotlib import _RCPARAMS_LATEX_SINGLE_COLUMN, save_figure
+from matplotlib_helpers import _RCPARAMS_LATEX_SINGLE_COLUMN, save_figure
 from plots_for_paper.consts import SIM_TITLES, TEST_LABELS
 
 def generate_single_plot(dist_name, dist_title, ns):

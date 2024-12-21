@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 from matplotlib.patches import Rectangle
 import sys
 sys.path.append('./')
-from amit_matplotlib import _RCPARAMS_LATEX_SINGLE_COLUMN, save_figure
+from matplotlib_helpers import _RCPARAMS_LATEX_SINGLE_COLUMN, save_figure
 from common import rank_transform_unbiased
 from AreaIndependenceTest import AreaCoverageIndependenceTest
 
