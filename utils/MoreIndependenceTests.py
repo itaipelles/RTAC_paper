@@ -3,7 +3,7 @@ from hyppo.independence.base import IndependenceTest, IndependenceTestOutput
 import xicorpy
 from rpy2.robjects import FloatVector
 import rpy2.robjects.packages as rpackages
-# from minepy import MINE
+from minepy import MINE
 
 HHG = rpackages.importr('HHG', lib_loc='/home/itaipelles/R/x86_64-pc-linux-gnu-library/4.3')
 

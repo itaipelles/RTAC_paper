@@ -4,6 +4,7 @@ This is the official repository for reproducing the data and plots shown in the 
 "A coefficient of correlation for continuous random variables based on area coverage"
 
 ## Install
+First, since minepy only support Python up to 3.10 we recommend using Python 3.10, at least until support improves. From within a suiting Python environment, run
 ```bash
 pip install -r requirements.txt
 ```

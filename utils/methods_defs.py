@@ -7,7 +7,7 @@ INDEP_TESTS = {
     'xicor': MoreIndependenceTests.XiCorPYIndependenceTest,
     "dcor": Dcorr,
     "hsic": Hsic,
-    # 'mic': MoreIndependenceTests.MICIndependenceTest,
+    'mic': MoreIndependenceTests.MICIndependenceTest,
     'hhg': MoreIndependenceTests.HHGRIndependenceTest
 }
 
