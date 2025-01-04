@@ -6,8 +6,7 @@ from utils.matplotlib_helpers import _RCPARAMS_LATEX_SINGLE_COLUMN, save_figure
 
 
 def plot_ij(EVs, i, j, ax, color=None):
-    # x,y = rank_transform_unbiased(EVs[i], EVs[j])
-    x,y = EVs[i], EVs[j]
+    x,y = EVs[j], EVs[i]
     ax.scatter(x,y, c=color)
     ax.set_xticks([])
     ax.set_yticks([])
@@ -20,7 +19,19 @@ def plot_n_by_m(EVs, n, m, color=None):
         for j in range(m):
             ax = axes[i][j]
             plot_ij(EVs, i+i_offset, j+j_offset, ax, color=color)
-            ax.set_title(f'Eigenvectors {i+i_offset} / {j+j_offset}')
+            # ax.set_title(f'Eigenvectors {i+i_offset} / {j+j_offset}')
+                
+    col_titles = [f'\\textbf{{X Axis - Eigenvector {j+j_offset}}}' for j in range(m)]
+    row_titles = [f'\\textbf{{Y Axis - Eigenvector {i+i_offset}}}' for i in range(n)]
+    
+    for ax, title in zip(axes[0], col_titles):
+        ax.set_title(title,fontweight='bold')
+
+    for ax, title in zip(axes[:,0], row_titles):
+        ax.set_ylabel(title, size='large',fontweight='bold')
+
+
+
 
 def generate_eigienvectors_scatter_plots():
     x = np.load('plots_for_paper/eigenvectors_scatter_plots/data/rect3d_x.npy')
