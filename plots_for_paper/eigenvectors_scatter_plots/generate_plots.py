@@ -11,18 +11,17 @@ def plot_ij(EVs, i, j, ax, color=None):
     ax.set_xticks([])
     ax.set_yticks([])
 
-def plot_n_by_m(EVs, n, m, color=None):
+def plot_n_by_m(EVs, i_list, j_list, color=None):
+    n = len(i_list)
+    m = len(j_list)
     fig, axes = plt.subplots(n,m,figsize=(m*3,n*3))
-    i_offset = 4
-    j_offset = 1
-    for i in range(n):
-        for j in range(m):
-            ax = axes[i][j]
-            plot_ij(EVs, i+i_offset, j+j_offset, ax, color=color)
-            # ax.set_title(f'Eigenvectors {i+i_offset} / {j+j_offset}')
+    for ax_i, ev_i in enumerate(i_list):
+        for ax_j, ev_j in enumerate(j_list):
+            ax = axes[ax_i][ax_j]
+            plot_ij(EVs, ev_i, ev_j, ax, color=color)
                 
-    col_titles = [f'\\textbf{{X Axis - Eigenvector {j+j_offset}}}' for j in range(m)]
-    row_titles = [f'\\textbf{{Y Axis - Eigenvector {i+i_offset}}}' for i in range(n)]
+    col_titles = [f'\\textbf{{X Axis - Eigenvector {j}}}' for j in j_list]
+    row_titles = [f'\\textbf{{Y Axis - Eigenvector {i}}}' for i in i_list]
     
     for ax, title in zip(axes[0], col_titles):
         ax.set_title(title,fontweight='bold')
@@ -37,8 +36,11 @@ def generate_eigienvectors_scatter_plots():
     x = np.load('plots_for_paper/eigenvectors_scatter_plots/data/rect3d_x.npy')
     EVs = np.load('plots_for_paper/eigenvectors_scatter_plots/data/rect3d_evs.npy')
     with plt.rc_context(rc = _RCPARAMS_LATEX_SINGLE_COLUMN):
-        plot_n_by_m(EVs, 5, 3, color=x)
-        save_figure(plt.gcf(), 'plots_for_paper/eigenvectors_scatter_plots/plots/rect3d_evs_4_to_8.pdf')
+        plot_n_by_m(EVs, [4,8,10,14], [1,2,3], color=x)
+        save_figure(plt.gcf(), 'plots_for_paper/eigenvectors_scatter_plots/plots/rect3d_selected_evs.pdf')
+        plt.close('all')
+        plot_n_by_m(EVs, range(1,23), range(1,4), color=x)
+        save_figure(plt.gcf(), 'plots_for_paper/eigenvectors_scatter_plots/plots/rect3d_all_evs.pdf')
 
 if __name__ == '__main__':
     generate_eigienvectors_scatter_plots()
