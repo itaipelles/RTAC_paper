@@ -65,7 +65,7 @@ def generate_eigienvectors_classification_plots():
         ('best_threshold', 'Best Threshold $\\alpha$'),
         ('success_rate', 'Simulations With $C_+ > C_-$'),
         # ('best_threshold_success_rate', 'Individual Coefficient Classification Success Rate'),
-        ('case_success_rate_with_best_threshold', 'Simulations With $C_+ > \\alpha > C_-$'),
+        ('case_success_rate_with_best_threshold', 'Simulations With $C_+ > \\alpha \\geq C_-$'),
         ('avg_errors_per_sim', 'Mean Num of Errors Per Sim.'),
     ]
     lines = []
