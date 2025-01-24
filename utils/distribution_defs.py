@@ -76,6 +76,11 @@ SIMULATIONS = {
     'Gaussian_X': Gaussian_X
 }
 
+SIMULATIONS_IN_PAPER_NAMES = ['exponential', 'quadratic', 'sin_four_pi', 'circle', 'spiral', '4_circles', 'diamond', 'checkerboard8', 'joint_normal', 'Gaussian_X', 'multimodal_independence']
+SIMULATIONS_IN_PAPER = {
+    key: SIMULATIONS[key] for key in SIMULATIONS_IN_PAPER_NAMES
+}
+
 SIM_TITLES = {
     'checkerboard2': 'Checkerboard 2x2',
     'checkerboard4': 'Checkerboard 4x4',
