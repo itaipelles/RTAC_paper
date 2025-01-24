@@ -33,26 +33,29 @@ def generate_bivariate_distributions_plots():
 
     with plt.rc_context(rc = special_params_for_plot):
         for sim, sim_title in SIM_TITLES.items():
-            x,y = np.load(f'plots_for_paper/bivariate_distributions/data/{sim}_noisy.npy')
-            x_no_noise,y_no_noise = np.load(f'plots_for_paper/bivariate_distributions/data/{sim}.npy')
-
-            # plot the noise and noise-free sims
-            plt.scatter(x, y, label="Noisy")
-            plt.scatter(x_no_noise, y_no_noise, label="No Noise")
-
-            # make the plot look pretty
-            plt.title("{}".format(sim_title))
-            ax = plt.gca()
-            ax.set_xticks([])
-            ax.set_yticks([])
-            if sim == 'ellipse':
-                ax.set_ylim([-1.1, 1.1])
-                plt.axis('equal')
+            for noise in [0, 0.05, 0.1, 0.2, 0.5, 1]:
+                x,y = np.load(f'plots_for_paper/bivariate_distributions/data/{sim}_noise_{noise}.npy')
+                plt.scatter(x, y, label="Noisy")
                 
-            sns.despine(left=True, bottom=True, right=True)
+                if noise != 0:
+                    x_no_noise,y_no_noise = np.load(f'plots_for_paper/bivariate_distributions/data/{sim}_noise_0.npy')
+                    plt.scatter(x_no_noise, y_no_noise, label="No Noise")
+                else:
+                    plt.scatter(x, y, label="Noisy2")
 
-            save_figure(plt.gcf(), f'plots_for_paper/bivariate_distributions/plots/{sim}.pdf')
-            plt.clf()
+                # make the plot look pretty
+                plt.title("{}".format(sim_title))
+                ax = plt.gca()
+                ax.set_xticks([])
+                ax.set_yticks([])
+                if sim == 'ellipse':
+                    ax.set_ylim([-1.1, 1.1])
+                    plt.axis('equal')
+                    
+                sns.despine(left=True, bottom=True, right=True)
+
+                save_figure(plt.gcf(), f'plots_for_paper/bivariate_distributions/plots/{sim}_noise_{noise}.pdf')
+                plt.clf()
         
 if __name__ == '__main__':
     generate_bivariate_distributions_plots()
