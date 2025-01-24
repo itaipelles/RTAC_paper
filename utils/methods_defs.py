@@ -16,6 +16,6 @@ TEST_LABELS = {
     'xicor': "$\\xi_n$",
     'dcor': "dCor",
     'hsic': "HSIC",
-    # 'mic': "MIC",
+    'mic': "MIC",
     'hhg': "HHG"
 }
