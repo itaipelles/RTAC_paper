@@ -1,9 +1,10 @@
 from math import ceil
 import numpy as np
 from joblib import Parallel, delayed
+import os
 import sys
 sys.path.append('./')
-from utils.distribution_defs import SIMULATIONS
+from utils.distribution_defs import SIMULATIONS, SIMULATIONS_IN_PAPER
 from utils.methods_defs import INDEP_TESTS
 
 # constants
@@ -42,6 +43,10 @@ def power(test, sim, alpha=0.05, reps=2000, n=100, noise=1):
 
 def estimate_power(test, sim, noise):
     """Compute the mean of the estimated power of 5 replications over sample sizes."""
+    path = "plots_for_paper/tests_of_indep_comparison/data/{}_{}_noise_{}.csv".format(sim, test, noise)
+    recalc_all = True
+    if not recalc_all and os.path.exists(path):
+        return
     est_power = np.array(
         [
             np.mean(
@@ -68,8 +73,9 @@ def generate_data_for_indep_tests_plots():
         [
             delayed(estimate_power)(test, sim_name, noise)
             for sim_name in SIMULATIONS.keys()
+            # for sim_name in SIMULATIONS_IN_PAPER.keys()
             for test in INDEP_TESTS.keys()
-            for noise in [0, 0.5, 1]
+            for noise in [0, 0.05, 0.1, 0.2, 0.5, 1]
         ]
     )
 
