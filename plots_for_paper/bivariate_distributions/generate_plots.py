@@ -51,7 +51,9 @@ def generate_bivariate_distributions_plots():
                 if sim == 'ellipse':
                     ax.set_ylim([-1.1, 1.1])
                     plt.axis('equal')
-                    
+                
+                if noise != 0:
+                    plt.legend(loc='upper center', bbox_to_anchor=(0.5, 0),ncol=2,fontsize=22)
                 sns.despine(left=True, bottom=True, right=True)
 
                 save_figure(plt.gcf(), f'plots_for_paper/bivariate_distributions/plots/{sim}_noise_{noise}.pdf')
