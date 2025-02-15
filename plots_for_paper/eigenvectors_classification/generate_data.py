@@ -62,7 +62,7 @@ def generate_data_for_eigenvector_classification(seed):
     
     iterations = 100
     for i in tqdm(range(iterations)):
-        x,y,z,EVs = get_3d_rect_evs(n=2500)
+        x,y,z,EVs = get_3d_rect_evs(n=4000)
         all_vs = EVs[1:20]
         plot_n_by_m(EVs, range(4,20), range(1,4), color=x)
         save_figure(plt.gcf(), f'plots_for_paper/eigenvectors_classification/data/scatters_{i}.pdf')
