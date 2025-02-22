@@ -1,13 +1,12 @@
 import pickle
 import numpy as np
 
-table_prefix_string = '''\\begin{tabular}{c c c c c c c}
-\\hline
-n & $\\xi_n$ & HHG & MIC & dCor & HSIC  & $\\eta_n$ (ours) \\\\ [0.5ex] 
+table_prefix_string = '''\\begin{tabular}{c|c c c c c c}
+{\\bf n} & $\\xi_n$ & HHG & MIC & dCor & HSIC  & $\\eta_n$ (ours) \\\\ 
 \\hline
 '''
 
-table_suffix_string = ''' [1ex]
+table_suffix_string = '''
 \\hline
 \\end{tabular}'''
 
