@@ -8,7 +8,7 @@ from utils.matplotlib_helpers import _RCPARAMS_LATEX_SINGLE_COLUMN, save_figure
 
 def plot_ij(EVs, i, j, ax, color=None):
     x,y = EVs[j], EVs[i]
-    ax.scatter(x,y, c=color)
+    ax.scatter(x,y, c=color, s=5)
     ax.set_xticks([])
     ax.set_yticks([])
     ax.set_xlabel(f"$\eta_n$ = {round(calc_eta_n(x,y), 3)}", ha="center", fontsize=14)
