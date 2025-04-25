@@ -5,7 +5,7 @@ import sys
 sys.path.append('./')
 from utils.matplotlib_helpers import _RCPARAMS_LATEX_SINGLE_COLUMN, save_figure
 from utils.common import rank_transform_unbiased
-from utils.AreaCoverageIndependenceTest import AreaCoverageIndependenceTest
+from utils.AreaCoefficientIndependenceTest import AreaCoefficientIndependenceTest
 
 def plot_squares(x,y,n,do_RT=False,name=None):
     if do_RT:
@@ -29,7 +29,7 @@ def plot_squares(x,y,n,do_RT=False,name=None):
         ax.set_xticks([0,1])
         ax.set_yticks([0,1])
         if do_RT:
-            rtac = AreaCoverageIndependenceTest(1).statistic(x,y)
+            rtac = AreaCoefficientIndependenceTest(1).statistic(x,y)
             plt.figtext(0.5, 0.05, f"RTAC = {round(rtac, 3)}", ha="center", fontsize=26)
         if name is not None:
             save_figure(fig, name)

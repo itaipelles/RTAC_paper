@@ -4,18 +4,18 @@ import pickle
 import time
 import sys
 sys.path.append('./')
-from utils.AreaCoverageIndependenceTest import AreaCoverageIndependenceTest
+from utils.AreaCoefficientIndependenceTest import AreaCoefficientIndependenceTest
 from utils.MoreIndependenceTests import HHGRIndependenceTest
 from utils.distribution_defs import multimodal_independence
 from utils.methods_defs import INDEP_TESTS
 
 def prepare_for_runtime_plots(ns):
     # call area function once for numba compilation:
-    AreaCoverageIndependenceTest().statistic(np.random.rand(100),np.random.rand(100))
+    AreaCoefficientIndependenceTest().statistic(np.random.rand(100),np.random.rand(100))
     
     # call area function once for each n to pre-calculate the min area for n
     for n in tqdm(ns):
-        AreaCoverageIndependenceTest().statistic(np.random.rand(n),np.random.rand(n))
+        AreaCoefficientIndependenceTest().statistic(np.random.rand(n),np.random.rand(n))
     
     # call HHGR once for each n to create the null tables
     for n in tqdm(ns):

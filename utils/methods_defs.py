@@ -1,9 +1,9 @@
 from hyppo.independence import Hsic, Dcorr
-import utils.AreaCoverageIndependenceTest as AreaCoverageIndependenceTest
+import utils.AreaCoefficientIndependenceTest as AreaCoefficientIndependenceTest
 import utils.MoreIndependenceTests as MoreIndependenceTests
 
 INDEP_TESTS = {
-    'rtac': AreaCoverageIndependenceTest.AreaCoverageIndependenceTest,
+    'rtac': AreaCoefficientIndependenceTest.AreaCoefficientIndependenceTest,
     'xicor': MoreIndependenceTests.XiCorPYIndependenceTest,
     "dcor": Dcorr,
     "hsic": Hsic,
