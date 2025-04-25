@@ -4,7 +4,7 @@ import sys
 sys.path.append('./')
 from plots_for_paper.tests_of_indep_comparison.generate_data import SAMP_SIZES
 from utils.matplotlib_helpers import _RCPARAMS_LATEX_SINGLE_COLUMN, save_figure
-from utils.distribution_defs import SIMULATIONS, SIM_TITLES
+from utils.distribution_defs import SIMULATIONS
 from utils.methods_defs import TEST_LABELS
 
 def generate_indep_tests_plots():
