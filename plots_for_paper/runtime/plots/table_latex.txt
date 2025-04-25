@@ -1,5 +1,5 @@
 \begin{tabular}{c|c c c c c c}
-{\bf n} & $\xi_n$ & HHG & MIC & dCor & HSIC  & $\eta_n$ (ours) \\ 
+{\bf n} & $\xi_n$ & HHG & MIC & dCor & HSIC  & RTAC (ours) \\ 
 \hline
 100 & 0.0009 & 0.0141 & 0.0012 & 0.0007 & 0.0009 & 0.0003 \\
 500 & 0.0011 & 0.0149 & 0.0194 & 0.0081 & 0.0159 & 0.0008 \\

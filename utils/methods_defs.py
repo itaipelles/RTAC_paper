@@ -3,7 +3,7 @@ import utils.AreaCoverageIndependenceTest as AreaCoverageIndependenceTest
 import utils.MoreIndependenceTests as MoreIndependenceTests
 
 INDEP_TESTS = {
-    'area': AreaCoverageIndependenceTest.AreaCoverageIndependenceTest,
+    'rtac': AreaCoverageIndependenceTest.AreaCoverageIndependenceTest,
     'xicor': MoreIndependenceTests.XiCorPYIndependenceTest,
     "dcor": Dcorr,
     "hsic": Hsic,
@@ -12,7 +12,7 @@ INDEP_TESTS = {
 }
 
 TEST_LABELS = {
-    'area': '$\\eta_n$',
+    'rtac': 'RTAC',
     'xicor': "$\\xi_n$",
     'dcor': "dCor",
     'hsic': "HSIC",

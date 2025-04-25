@@ -29,8 +29,8 @@ def plot_squares(x,y,n,do_RT=False,name=None):
         ax.set_xticks([0,1])
         ax.set_yticks([0,1])
         if do_RT:
-            eta_n = AreaCoverageIndependenceTest(1).statistic(x,y)
-            plt.figtext(0.5, 0.05, f"$\eta_n$ = {round(eta_n, 3)}", ha="center", fontsize=26)
+            rtac = AreaCoverageIndependenceTest(1).statistic(x,y)
+            plt.figtext(0.5, 0.05, f"RTAC = {round(rtac, 3)}", ha="center", fontsize=26)
         if name is not None:
             save_figure(fig, name)
         plt.clf()

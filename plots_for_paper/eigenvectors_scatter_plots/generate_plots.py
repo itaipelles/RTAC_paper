@@ -1,6 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
-from etacorpy.calc_eta_n import calc_eta_n
+from rtacpy.calc_rtac import calc_rtac
 import sys
 sys.path.append('./')
 from utils.matplotlib_helpers import _RCPARAMS_LATEX_SINGLE_COLUMN, save_figure
@@ -11,7 +11,7 @@ def plot_ij(EVs, i, j, ax, color=None):
     ax.scatter(x,y, c=color, s=5)
     ax.set_xticks([])
     ax.set_yticks([])
-    ax.set_xlabel(f"$\eta_n$ = {round(calc_eta_n(x,y), 3)}", ha="center", fontsize=14)
+    ax.set_xlabel(f"RTAC = {round(calc_rtac(x,y), 3)}", ha="center", fontsize=14)
 
 def plot_n_by_m(EVs, i_list, j_list, color=None):
     n = len(i_list)

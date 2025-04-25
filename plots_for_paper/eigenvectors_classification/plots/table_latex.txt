@@ -1,5 +1,5 @@
 \begin{tabular}{c|c c c c c c}
- & $\xi_n$ & MIC & dCor & HSIC  & $\eta_n$ (ours) \\
+ & $\xi_n$ & MIC & dCor & HSIC  & RTAC (ours) \\
 \hline
 Mean $C_-$ & 0.0459 & 0.1227 & 0.0098 & 0.0065 & 0.0457 \\
 Mean $C_+$ & 0.0177 & 0.1131 & 0.0088 & 0.0069 & 0.0837 \\

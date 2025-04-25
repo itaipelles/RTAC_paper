@@ -2,7 +2,7 @@ import numpy as np
 import pickle
 
 table_prefix_string = '''\\begin{tabular}{c|c c c c c c}
- & $\\xi_n$ & MIC & dCor & HSIC  & $\\eta_n$ (ours) \\\\
+ & $\\xi_n$ & MIC & dCor & HSIC  & RTAC (ours) \\\\
 \\hline
 '''
 
@@ -54,8 +54,8 @@ def generate_eigienvectors_classification_plots():
         num_sims = len(results[key]['c_minus'])
         table_stats[key]['avg_errors_per_sim'] = all_errors/num_sims
     
-    order_of_keys = ['xicor', 'mic', 'hsic', 'dcor', 'area']
-    # order_of_keys = ['xicor', 'area']
+    order_of_keys = ['xicor', 'mic', 'hsic', 'dcor', 'rtac']
+    # order_of_keys = ['xicor', 'rtac']
     row_defs = [
         ('mean_c_minus', 'Mean $C_-$'),
         ('mean_c_plus', 'Mean $C_+$'),
@@ -72,7 +72,7 @@ def generate_eigienvectors_classification_plots():
         cur_items = [title]
         for key in order_of_keys:
             digits = 1 if 'success' in field else 4
-            if key == 'area' and ('success' in field or 'avg' in field):
+            if key == 'rtac' and ('success' in field or 'avg' in field):
                 cur_items.append('\\textbf{' + str(round(table_stats[key][field],digits)) + '}')
             else:
                 cur_items.append(str(round(table_stats[key][field],digits)))

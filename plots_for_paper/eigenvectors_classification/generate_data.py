@@ -34,7 +34,7 @@ def plot_ij(EVs, i, j, ax, color=None):
     ax.scatter(x,y, c=color)
     ax.set_xticks([])
     ax.set_yticks([])
-    ax.set_title(INDEP_TESTS['area']().statistic(np.reshape(x, (-1,1)), np.reshape(y, (-1,1))))
+    ax.set_title(INDEP_TESTS['rtac']().statistic(np.reshape(x, (-1,1)), np.reshape(y, (-1,1))))
 
 def plot_n_by_m(EVs, i_list, j_list, color=None):
     n = len(i_list)
