@@ -1,4 +1,4 @@
-# Eta_n Coefficient Paper
+# RTAC Paper
 This is the official repository for reproducing the data and plots shown in the paper (link TBD):
 
 "A coefficient of correlation for continuous random variables based on area coverage"
