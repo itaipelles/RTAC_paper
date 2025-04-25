@@ -62,10 +62,10 @@ def generate_eigienvectors_classification_plots():
         # ('max_c_minus', 'Max $C_-$'),
         # ('min_c_plus', 'Min $C_+$'),
         ('best_threshold', 'Best Threshold $\\alpha$'),
-        ('success_rate', 'Simulations With $C_+ > C_-$'),
+        ('success_rate', 'Cases With $C_+ > C_-$'),
         # ('best_threshold_success_rate', 'Individual Coefficient Classification Success Rate'),
-        ('case_success_rate_with_best_threshold', 'Simulations With $C_+ > \\alpha \\geq C_-$'),
-        ('avg_errors_per_sim', 'Mean Num of Errors Per Sim.'),
+        ('case_success_rate_with_best_threshold', 'Cases With $C_+ > \\alpha \\geq C_-$'),
+        ('avg_errors_per_sim', 'Mean Num of Errors Per Case'),
     ]
     lines = []
     for field, title in row_defs:
