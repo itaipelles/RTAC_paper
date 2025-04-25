@@ -1,6 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
-from rtacpy.calc_rtac import calc_rtac
+from rtacpy import calc_rtac
 import sys
 sys.path.append('./')
 from utils.matplotlib_helpers import _RCPARAMS_LATEX_SINGLE_COLUMN, save_figure

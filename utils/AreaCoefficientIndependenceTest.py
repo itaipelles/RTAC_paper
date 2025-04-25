@@ -1,6 +1,6 @@
 import numpy as np
 from hyppo.independence.base import IndependenceTest
-from rtacpy.calc_rtac import calc_rtac
+from rtacpy import calc_rtac
 
 
 class AreaCoefficientIndependenceTest(IndependenceTest):
