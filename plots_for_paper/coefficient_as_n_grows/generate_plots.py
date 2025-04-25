@@ -12,7 +12,10 @@ def generate_single_plot(dist_name, dist_title, ns, noise):
     with open(f'plots_for_paper/coefficient_as_n_grows/data/{dist_name}_noise_{noise}.pkl', 'rb') as f:
         stats = pickle.load(f)
     with plt.rc_context(rc = _RCPARAMS_LATEX_SINGLE_COLUMN):
-        for (key, values), marker in zip(stats.items(), ['o', 'd', 's', '*', '>']):
+        for key, marker in zip(TEST_LABELS.keys(), ['o', 'd', 's', '*', '>']):
+            if key == 'hhg':
+                continue
+            values = stats[key]
             plt.plot(ns, values,marker=marker,linestyle='-',label=TEST_LABELS[key])
         plt.gca().legend()
         plt.gca().set_ylim(0,1.02)
