@@ -4,8 +4,8 @@
 Mean $C_-$ & 0.0459 & 0.1227 & 0.0098 & 0.0065 & 0.0457 \\
 Mean $C_+$ & 0.0177 & 0.1131 & 0.0088 & 0.0069 & 0.0837 \\
 Best Threshold $\alpha$ & 0.0326 & 0.1181 & 0.007 & 0.0056 & 0.0693 \\
-Simulations With $C_+ > C_-$ & 0.0\% & 31.0\% & 54.0\% & 63.0\% & \textbf{85.0}\% \\
-Simulations With $C_+ > \alpha \geq C_-$ & 0.0\% & 19.0\% & 44.0\% & 53.0\% & \textbf{78.0}\% \\
-Mean Num of Errors Per Sim. & 4.93 & 1.55 & 0.76 & 0.62 & \textbf{0.25} \\
+Cases With $C_+ > C_-$ & 0.0\% & 31.0\% & 54.0\% & 63.0\% & \textbf{85.0}\% \\
+Cases With $C_+ > \alpha \geq C_-$ & 0.0\% & 19.0\% & 44.0\% & 53.0\% & \textbf{78.0}\% \\
+Mean Num of Errors Per Case & 4.93 & 1.55 & 0.76 & 0.62 & \textbf{0.25} \\
 \hline
 \end{tabular}

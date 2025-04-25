@@ -10,10 +10,10 @@ from utils.distribution_defs import multimodal_independence
 from utils.methods_defs import INDEP_TESTS
 
 def prepare_for_runtime_plots(ns):
-    # call area function once for numba compilation:
+    # call rtac function once for numba compilation:
     AreaCoefficientIndependenceTest().statistic(np.random.rand(100),np.random.rand(100))
     
-    # call area function once for each n to pre-calculate the min area for n
+    # call rtac function once for each n to pre-calculate alpha_n for n
     for n in tqdm(ns):
         AreaCoefficientIndependenceTest().statistic(np.random.rand(n),np.random.rand(n))
     
