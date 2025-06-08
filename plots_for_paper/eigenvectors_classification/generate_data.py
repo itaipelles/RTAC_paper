@@ -48,7 +48,7 @@ def plot_n_by_m(EVs, i_list, j_list, color=None):
 def generate_data_for_eigenvector_classification(seed):
     np.random.seed(seed)
     methods = {
-        key: value() for key,value in INDEP_TESTS.items() if 'hhg' not in key
+        key: value() for key,value in INDEP_TESTS.items() if 'adp' not in key
     }
     
     results = {

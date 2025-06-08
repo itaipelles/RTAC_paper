@@ -13,7 +13,7 @@ def generate_single_plot(dist_name, dist_title, ns, noise):
         stats = pickle.load(f)
     with plt.rc_context(rc = _RCPARAMS_LATEX_SINGLE_COLUMN):
         for key, marker in zip(TEST_LABELS.keys(), ['o', 'd', 's', '*', '>']):
-            if key == 'hhg':
+            if key == 'adp':
                 continue
             values = stats[key]
             plt.plot(ns, values,marker=marker,linestyle='-',label=TEST_LABELS[key])

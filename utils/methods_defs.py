@@ -8,7 +8,7 @@ INDEP_TESTS = {
     "dcor": Dcorr,
     "hsic": Hsic,
     'mic': MoreIndependenceTests.MICIndependenceTest,
-    'hhg': MoreIndependenceTests.HHGRIndependenceTest
+    'adp': MoreIndependenceTests.ADP_MMAX5_IndependenceTest,
 }
 
 TEST_LABELS = {
@@ -17,5 +17,5 @@ TEST_LABELS = {
     'dcor': "dCor",
     'hsic': "HSIC",
     'mic': "MIC",
-    'hhg': "HHG"
+    'adp': "ADP",
 }

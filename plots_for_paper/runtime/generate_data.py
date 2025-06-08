@@ -5,7 +5,7 @@ import time
 import sys
 sys.path.append('./')
 from utils.AreaCoefficientIndependenceTest import AreaCoefficientIndependenceTest
-from utils.MoreIndependenceTests import HHGRIndependenceTest
+from utils.MoreIndependenceTests import ADP_EQP_ML_IndependenceTest
 from utils.distribution_defs import multimodal_independence
 from utils.methods_defs import INDEP_TESTS
 
@@ -17,9 +17,9 @@ def prepare_for_runtime_plots(ns):
     for n in tqdm(ns):
         AreaCoefficientIndependenceTest().statistic(np.random.rand(n),np.random.rand(n))
     
-    # call HHGR once for each n to create the null tables
+    # call adp once for each n to create the null tables
     for n in tqdm(ns):
-        HHGRIndependenceTest().statistic(np.random.rand(n),np.random.rand(n))
+        ADP_EQP_ML_IndependenceTest().statistic(np.random.rand(n),np.random.rand(n))
 
 def generate_data_for_runtime():
     ns = [100, 500, 1000, 2000, 10000]

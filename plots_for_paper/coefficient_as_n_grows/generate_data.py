@@ -10,7 +10,7 @@ from utils.methods_defs import INDEP_TESTS
 
 def generate_data_single_dist(dist, dist_name, ns, noise):
     test_instances = {
-        key: value() for key,value in INDEP_TESTS.items() if 'hhg' not in key
+        key: value() for key,value in INDEP_TESTS.items() if 'adp' not in key
     }
 
     stats = {
