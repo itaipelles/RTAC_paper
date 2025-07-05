@@ -52,7 +52,7 @@ def estimate_power(test, sim, noise):
             np.mean(
                 [
                     power(
-                        INDEP_TESTS[test](), sim, n=i, noise=noise
+                        INDEP_TESTS[test], sim, n=i, noise=noise
                     )
                     for _ in range(POWER_REPS)
                 ]

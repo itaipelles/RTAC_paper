@@ -26,28 +26,24 @@ def generate_data_for_runtime():
     np.save('plots_for_paper/runtime/data/ns', ns)
     dist = multimodal_independence # it doesn't matter which distribution we use, we only check runtime
     
-    test_instances = {
-        key: value() for key,value in INDEP_TESTS.items()
-    }
-
     times = {
-        key: [] for key in test_instances.keys()
+        key: [] for key in INDEP_TESTS.keys()
     }
     
     prepare_for_runtime_plots(ns)
 
     for n in tqdm(ns):
         cur_n_times = {
-            key: [] for key in test_instances.keys()
+            key: [] for key in INDEP_TESTS.keys()
         }
         num_of_reps = 100000//n
         for _ in range(num_of_reps):
             x,y = dist(n,1)
-            for key, test_instance in test_instances.items():
+            for key, test_instance in INDEP_TESTS.items():
                 bef = time.time()
                 test_instance.statistic(x,y)
                 cur_n_times[key].append(time.time()-bef)
-        for key in test_instances.keys():
+        for key in INDEP_TESTS.keys():
             times[key].append(np.mean(cur_n_times[key]))
     with open(f'plots_for_paper/runtime/data/runtimes.pkl', 'wb') as f:
         pickle.dump(times, f)

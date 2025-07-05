@@ -12,7 +12,7 @@ def generate_indep_tests_plots():
     with plt.rc_context(rc = _RCPARAMS_LATEX_SINGLE_COLUMN):
         for sim in SIMULATIONS.keys():
             for noise in [0, 0.05, 0.1, 0.2, 0.5, 1]:
-                for test, marker in zip([key for key in TEST_LABELS.keys()], ['o', 'd', 's', '*', '>', 'P']):
+                for test, marker in zip([key for key in TEST_LABELS.keys()], ['o', 'd', 's', '*', '>', 'P', 'X']):
                     try:
                         est_power = np.genfromtxt(
                             f"plots_for_paper/tests_of_indep_comparison/data/{sim}_{test}_noise_{noise}.csv",
