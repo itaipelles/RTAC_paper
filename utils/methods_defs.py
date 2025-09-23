@@ -5,6 +5,8 @@ import utils.MoreIndependenceTests as MoreIndependenceTests
 INDEP_TESTS = {
     'rtac': AreaCoefficientIndependenceTest.AreaCoefficientIndependenceTest(coverage_factor=1),
     'rtac_gamma_2': AreaCoefficientIndependenceTest.AreaCoefficientIndependenceTest(coverage_factor=2),
+    'rtac_gamma_4': AreaCoefficientIndependenceTest.AreaCoefficientIndependenceTest(coverage_factor=4),
+    'rtac_gamma_0.5': AreaCoefficientIndependenceTest.AreaCoefficientIndependenceTest(coverage_factor=0.5),
     'xicor': MoreIndependenceTests.XiCorPYIndependenceTest(),
     "dcor": Dcorr(),
     "hsic": Hsic(),
@@ -13,11 +15,12 @@ INDEP_TESTS = {
 }
 
 TEST_LABELS = {
-    'rtac': 'RTAC',
+    'rtac': 'RTAC ($\\gamma=1$)',
+    'rtac_gamma_4': 'RTAC ($\\gamma=4$)',
+    'rtac_gamma_0.5': 'RTAC ($\\gamma=0.5$)',
     'xicor': "$\\xi_n$",
     'dcor': "dCor",
     'hsic': "HSIC",
     'mic': "MIC",
     'adp': "ADP",
-    'rtac_gamma_2': 'RTAC ($\\gamma=2$)',
 }

@@ -12,7 +12,7 @@ def generate_single_plot(dist_name, dist_title, ns, noise):
     with open(f'plots_for_paper/coefficient_as_n_grows/data/{dist_name}_noise_{noise}.pkl', 'rb') as f:
         stats = pickle.load(f)
     with plt.rc_context(rc = _RCPARAMS_LATEX_SINGLE_COLUMN):
-        for key, marker in zip(TEST_LABELS.keys(), ['o', 'd', 's', '*', '>']):
+        for key, marker in zip(TEST_LABELS.keys(), ['o', '^', 'v', 's', '*', '>', 'P']):
             if key == 'adp':
                 continue
             values = stats[key]
