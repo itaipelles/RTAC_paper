@@ -6,6 +6,7 @@ from coefficient_as_n_grows.generate_data import generate_data_for_coefficient_p
 from runtime.generate_data import generate_data_for_runtime
 from eigenvectors_scatter_plots.generate_data import generate_data_for_eigenvector_scatter_plots
 from eigenvectors_classification.generate_data import generate_data_for_eigenvector_classification
+from choice_of_gamma.generate_data import generate_data_for_choice_of_gamma_plots
 
 generate_data_for_introduction_plots([0,0,0])
 generate_data_for_sweeping_line_plots(0)
@@ -15,3 +16,4 @@ generate_data_for_coefficient_plots(0)
 generate_data_for_runtime(0)
 generate_data_for_eigenvector_scatter_plots(1)
 generate_data_for_eigenvector_classification(0)
+generate_data_for_choice_of_gamma_plots()

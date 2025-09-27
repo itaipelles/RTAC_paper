@@ -7,6 +7,7 @@ from runtime.generate_plots import generate_runtime_plots
 from proof_of_alpha_n.generate_plots import generate_alpha_n_proof_plots
 from eigenvectors_scatter_plots.generate_plots import generate_eigienvectors_scatter_plots
 from eigenvectors_classification.generate_plots import generate_eigienvectors_classification_plots
+from choice_of_gamma.generate_plots import generate_choice_of_gamma_plots
 import matplotlib.pyplot as plt
 
 
@@ -25,6 +26,8 @@ plt.close('all')
 generate_eigienvectors_scatter_plots()
 plt.close('all')
 generate_eigienvectors_classification_plots()
+plt.close('all')
+generate_choice_of_gamma_plots()
 plt.close('all')
 
 # must be last due to changing colors to grey
