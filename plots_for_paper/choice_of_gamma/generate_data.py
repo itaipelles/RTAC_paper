@@ -12,7 +12,7 @@ ALPHA = 0.05
 REPS = 3000
 
 # 7 distributions to use
-DISTRIBUTIONS = [
+DISTRIBUTIONS_CHOICE_OF_GAMMA = [
     {'name': 'sin_four_pi', 'noise_level': 0.1},
     {'name': 'spiral', 'noise_level': 0.2},
     {'name': '4_circles', 'noise_level': 0.0},
@@ -71,7 +71,7 @@ def generate_data_for_choice_of_gamma_plots():
     # Create data directory if it doesn't exist
     os.makedirs("plots_for_paper/choice_of_gamma/data", exist_ok=True)
     
-    for dist_config in DISTRIBUTIONS:
+    for dist_config in DISTRIBUTIONS_CHOICE_OF_GAMMA:
         dist_name = dist_config['name']
         noise_level = dist_config['noise_level']
         

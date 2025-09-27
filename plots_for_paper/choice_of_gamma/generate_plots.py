@@ -2,8 +2,9 @@ import matplotlib.pyplot as plt
 import numpy as np
 import sys
 sys.path.append('./')
+from utils.distribution_defs import SIM_TITLES
 from utils.matplotlib_helpers import _RCPARAMS_LATEX_SINGLE_COLUMN, save_figure
-from plots_for_paper.choice_of_gamma.generate_data import DISTRIBUTIONS
+from plots_for_paper.choice_of_gamma.generate_data import DISTRIBUTIONS_CHOICE_OF_GAMMA
 
 def generate_choice_of_gamma_plots():
     """
@@ -14,9 +15,9 @@ def generate_choice_of_gamma_plots():
         plt.figure(figsize=(12, 8))
         
         # Define colors for different distributions
-        colors = plt.cm.tab10(np.linspace(0, 1, len(DISTRIBUTIONS)))
+        colors = plt.cm.tab10(np.linspace(0, 1, len(DISTRIBUTIONS_CHOICE_OF_GAMMA)))
         
-        for i, dist_config in enumerate(DISTRIBUTIONS):
+        for i, dist_config in enumerate(DISTRIBUTIONS_CHOICE_OF_GAMMA):
             dist_name = dist_config['name']
             noise_level = dist_config['noise_level']
             
@@ -32,7 +33,7 @@ def generate_choice_of_gamma_plots():
                 )
                 
                 # Plot this distribution
-                plt.plot(gamma_values, powers, marker='o', label=dist_name, 
+                plt.plot(gamma_values, powers, marker='o', label=SIM_TITLES[dist_name], 
                         color=colors[i], linewidth=2, markersize=4)
                 
             except Exception as e:
