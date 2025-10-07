@@ -9,7 +9,7 @@ from plots_for_paper.tests_of_indep_comparison.generate_data import power
 N = 50  # Sample size
 GAMMA_VALUES = np.linspace(0.1, 6, 40)
 ALPHA = 0.05
-REPS = 3000
+REPS = 10000
 
 # 7 distributions to use
 DISTRIBUTIONS_CHOICE_OF_GAMMA = [
