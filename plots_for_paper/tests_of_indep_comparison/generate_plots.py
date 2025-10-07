@@ -12,13 +12,28 @@ def generate_indep_tests_plots():
     with plt.rc_context(rc = _RCPARAMS_LATEX_SINGLE_COLUMN):
         for sim in SIMULATIONS.keys():
             for noise in [0, 0.05, 0.1, 0.2, 0.5, 1]:
-                for test, marker in zip([key for key in TEST_LABELS.keys()], ['o', '^', 'v', 's', '*', '>', 'P', 'X']):
+                # First three methods are RTAC with gammas 1, 4, 0.5. Apply specific colors and marker sizes only to them.
+                color_overrides = ['blue', 'navy', 'lightblue']  # blue, dark blue, light blue
+                marker_size_overrides = [None, 10, 6]  # normal (default), large, small
+                for idx, (test, marker) in enumerate(zip([key for key in TEST_LABELS.keys()], ['s', 's', 's', 'o', '*', '>', 'P', 'X'])):
                     try:
                         est_power = np.genfromtxt(
                             f"plots_for_paper/tests_of_indep_comparison/data/{sim}_{test}_noise_{noise}.csv",
                             delimiter=",",
                         )
-                        plt.plot(SAMP_SIZES, est_power, label=TEST_LABELS[test], lw=2, marker=marker)
+                        if idx < 3:
+                            plot_kwargs = {
+                                'label': TEST_LABELS[test],
+                                'lw': 2,
+                                'marker': marker,
+                                'color': color_overrides[idx],
+                            }
+                            if marker_size_overrides[idx] is not None:
+                                plot_kwargs['markersize'] = marker_size_overrides[idx]
+                            plt.plot(SAMP_SIZES, est_power, **plot_kwargs)
+                        else:
+                            # Leave all other colors and marker sizes untouched
+                            plt.plot(SAMP_SIZES, est_power, label=TEST_LABELS[test], lw=2, marker=marker)
                     except:
                         print('missing', sim, test, noise)
                         num_missing += 1

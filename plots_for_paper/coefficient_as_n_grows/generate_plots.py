@@ -12,11 +12,27 @@ def generate_single_plot(dist_name, dist_title, ns, noise):
     with open(f'plots_for_paper/coefficient_as_n_grows/data/{dist_name}_noise_{noise}.pkl', 'rb') as f:
         stats = pickle.load(f)
     with plt.rc_context(rc = _RCPARAMS_LATEX_SINGLE_COLUMN):
-        for key, marker in zip(TEST_LABELS.keys(), ['o', '^', 'v', 's', '*', '>', 'P']):
+        # First three methods are RTAC with gammas 1, 4, 0.5. Apply specific colors and marker sizes only to them.
+        color_overrides = ['blue', 'navy', 'lightblue']  # blue, dark blue, light blue
+        marker_size_overrides = [None, 10, 6]  # normal (default), large, small
+        for idx, (key, marker) in enumerate(zip(TEST_LABELS.keys(), ['s', 's', 's', 'o', '*', '>', 'P'])):
             if key == 'adp':
                 continue
             values = stats[key]
-            plt.plot(ns, values,marker=marker,linestyle='-',label=TEST_LABELS[key])
+            if idx < 3:
+                # Apply color overrides, and marker size only where specified
+                plot_kwargs = {
+                    'marker': marker,
+                    'linestyle': '-',
+                    'label': TEST_LABELS[key],
+                    'color': color_overrides[idx],
+                }
+                if marker_size_overrides[idx] is not None:
+                    plot_kwargs['markersize'] = marker_size_overrides[idx]
+                plt.plot(ns, values, **plot_kwargs)
+            else:
+                # Leave all other colors and marker sizes untouched
+                plt.plot(ns, values, marker=marker, linestyle='-', label=TEST_LABELS[key])
         plt.gca().legend()
         plt.gca().set_ylim(0,1.02)
         plt.gca().set_xscale('log')
