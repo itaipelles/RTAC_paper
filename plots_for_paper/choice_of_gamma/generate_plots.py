@@ -65,16 +65,16 @@ def generate_choice_of_gamma_plots():
                 continue
         
         # Plot average across distributions (no markers, black dashed)
-        if (gamma_ref is not None) and len(powers_list) > 0:
-            avg_powers = np.mean(np.vstack(powers_list), axis=0)
-            plt.plot(
-                gamma_ref,
-                avg_powers,
-                color='black',
-                linestyle='--',
-                linewidth=4,
-                label='Average',
-            )
+        # if (gamma_ref is not None) and len(powers_list) > 0:
+        #     avg_powers = np.mean(np.vstack(powers_list), axis=0)
+        #     plt.plot(
+        #         gamma_ref,
+        #         avg_powers,
+        #         color='black',
+        #         linestyle='--',
+        #         linewidth=4,
+        #         label='Average',
+        #     )
 
         # Customize the plot
         plt.xlabel('Gamma (coverage_factor)', fontsize=22)
